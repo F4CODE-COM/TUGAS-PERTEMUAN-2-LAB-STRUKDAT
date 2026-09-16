@@ -8,43 +8,43 @@ struct node{
 
 int main(){
     node *node1 = new node();
-    node1->nilai = 70;
+    node1->nilai = 100;
     node1->next = nullptr;
 
     node *node2 = new node();
-    node2->nilai = 75;
+    node2->nilai = 92;
     node2->next = nullptr;
 
     node *node3 = new node();
-    node3->nilai = 60;
+    node3->nilai = 45;
     node3->next = nullptr;
 
     node *node4 = new node();
-    node4->nilai = 90;
+    node4->nilai = 87;
     node4->next = nullptr;
 
     node *node5 = new node();
-    node5->nilai = 89;
+    node5->nilai = 71;
     node5->next = nullptr;
 
     node *node6 = new node();
-    node6->nilai = 77;
+    node6->nilai = 99;
     node6->next = nullptr;
 
     node *node7 = new node();
-    node7->nilai = 40;
+    node7->nilai = 95;
     node7->next = nullptr;
 
     node *node8 = new node();
-    node8->nilai = 75;
+    node8->nilai = 60;
     node8->next = nullptr;
 
     node *node9 = new node();
-    node9->nilai = 97;
+    node9->nilai = 55;
     node9->next = nullptr;
 
     node *node10 = new node();
-    node10->nilai = 94;
+    node10->nilai = 88;
     node10->next = nullptr;
 
     //HEAD & TAIL
@@ -73,7 +73,7 @@ int main(){
 
     //TAMBAH NEW NODE DI DEPAN
     node *node11 = new node();
-    node11->nilai = 100;
+    node11->nilai = 70;
     node11->next = nullptr;
     node11->next = head;
     head = node11;//NODE 11 KUDETA POSISI HEAD DARI NODE 1
@@ -88,7 +88,7 @@ int main(){
 
     //TAMBAH NEW NODE DI BELAKANG
     node *node12 = new node();
-    node12->nilai = 12;
+    node12->nilai = 50;
     node12->next = nullptr;
     node10->next = node12; //MENGKUDETA TAIL DARI NODE 10
     tail = node12;
@@ -103,10 +103,10 @@ int main(){
     
     node *node13 = new node();
     node13->nilai = 0;
-    node13->next = node7; // NODE 13 KUDETA POSISI NODE 7 (NODE 7 SEKARANG BERADA DI URUTAN 9 KARENA +1 NODE DIAWAL DAN DIKUDETA NODE 13)
-    node6->next =  node13;
+    node13->next = node4; // NODE 13 KUDETA POSISI NODE 4 (NODE 4 SEKARANG BERADA DI URUTAN 6 KARENA +1 NODE DIAWAL DAN DIKUDETA NODE 13)
+    node3->next =  node13;
 
-    cout << "\nnilai mahasiswa setelah ditambahkan node baru di antara node 6 dan 7: \n";
+    cout << "\nnilai mahasiswa setelah ditambahkan node baru di antara node 3 dan 4: \n";
     temp = head;
     while (temp != nullptr)
     {
@@ -116,7 +116,7 @@ int main(){
 
     //HAPUS NODE KE 7 (40)
     temp = head;
-    while(temp ->next->nilai!= 40){
+    while(temp ->next->nilai!= 99){
         temp = temp ->next;
     }
 
@@ -124,7 +124,24 @@ int main(){
     temp ->next = hapus -> next;
     delete hapus;
 
-    cout << "\nnilai mahasiswa setelah node ke-7 (40) dihapus: \n";
+    cout << "\nnilai mahasiswa setelah node ke-6 (99) dihapus: \n";
+    temp = head;
+    while (temp != nullptr)
+    {
+        cout << temp->nilai << " ";
+        temp = temp->next;
+    }
+
+    temp = head;
+    while(temp ->next->nilai!= 60){
+        temp = temp ->next;
+    }
+
+    hapus = temp -> next;
+    temp ->next = hapus -> next;
+    delete hapus;
+
+    cout << "\nnilai mahasiswa setelah node ke-8 (60) dihapus: \n";
     temp = head;
     while (temp != nullptr)
     {
